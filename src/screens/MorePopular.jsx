@@ -52,7 +52,7 @@ const MorePopular = () => {
      //console.log(currentCategory[0]?._id);
      
    }
- }, [articles]);
+ }, [articles, results]);
 
  
  

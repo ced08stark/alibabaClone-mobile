@@ -1,5 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import React, {useEffect, useState, useContext} from 'react'
+import React, { useState, useContext} from 'react'
 import { urlFor } from '../../sanity'
 import {ArticleContext} from '../context/ArticleContext';
 import CargoImage from '../images/cargo.png'

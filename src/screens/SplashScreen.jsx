@@ -12,7 +12,7 @@ const SplashScreen = () => {
         setTimeout(()=>{
             navigation.navigate('HomeTab');
         }, 5000)
-    });
+    },[]);
   return (
     <View className="flex-1 relative items-center justify-center bg-white">
       <View className="absolute bottom-10">

@@ -22,7 +22,7 @@ const ArticleSpecial = () => {
        `,
       )
       .then(data => setArticleSpecial(data));
-  });
+  }, [articleSpecial]);
   
   return (
     <View className="w-[180px] h-[300px] bg-gray-200/60 m-1 ml-3 rounded-xl relative overflow-hidden">

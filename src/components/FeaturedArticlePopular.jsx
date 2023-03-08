@@ -13,9 +13,9 @@ const FeaturedArticlePopular = () => {
  
     
    useEffect(() => {
-    client
-      .fetch(
-        `*[_type == "tendance" && name == "popular(s)"]{
+     client
+       .fetch(
+         `*[_type == "tendance" && name == "popular(s)"]{
         ...,
         articles[] ->{
           ...,
@@ -26,11 +26,9 @@ const FeaturedArticlePopular = () => {
         }
           
        }[0]`,
-      )
-      .then(data => setArticlePopular(data?.articles));
-     
-      
-  }, [articlePopulars]);
+       )
+       .then(data => setArticlePopular(data?.articles));
+   }, [articlePopulars]);
   
   
   //console.log();

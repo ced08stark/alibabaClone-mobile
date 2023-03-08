@@ -28,7 +28,7 @@ const FeaturedArticleNew = () => {
        }[0]`,
        )
        .then(data => setArticleNew(data?.articles));
-   });
+   }, [articleNews]);
   return (
     <View className="pt-4">
       <HeaderRow title="Nouveautes(s)" showArrow={true} />

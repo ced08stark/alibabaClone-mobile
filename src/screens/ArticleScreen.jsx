@@ -62,7 +62,7 @@ const ArticleScreen = () => {
          date,
          rating,
        });
-     }, [setCurrentArticle]);
+     }, []);
     const layout = useWindowDimensions();
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([

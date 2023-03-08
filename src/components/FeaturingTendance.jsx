@@ -20,7 +20,7 @@ const FeaturingTendance = () => {
        }[0]`,
        )
        .then(data => setArticleLive(data?.articles));
-   });
+   }, [articleLive]);
   return (
     <View className="pt-4">
       <HeaderRow title="Juste pour vous" showArrow={false} />

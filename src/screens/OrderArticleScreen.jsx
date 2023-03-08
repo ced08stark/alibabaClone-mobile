@@ -30,7 +30,7 @@ const OrderArticleScreen = () => {
         SetHeaderBg('bg-transparent');
     }
     
-    const {currentArticle} = useContext(ArticleContext);
+  
    
   return (
     <SafeAreaView className="relative flex-1 bg-white">

@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Touchable, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { urlFor } from '../../sanity';
 import { useNavigation } from '@react-navigation/native';

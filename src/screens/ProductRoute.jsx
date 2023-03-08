@@ -16,7 +16,7 @@ const ProductRoute = () => {
         setTimeout(() => {
           setRefreshing(false);
         }, 2000);
-  })
+  },[])
   const onRefresh = useCallback(() => {
     setRefreshing(true);
     setTimeout(() => {
