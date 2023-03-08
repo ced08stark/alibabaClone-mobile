@@ -20,7 +20,8 @@ import {
   SignalSlashIcon,
   ChatBubbleOvalLeftEllipsisIcon,
   ChatBubbleBottomCenterIcon,
-  ChatBubbleLeftEllipsisIcon
+  ChatBubbleLeftEllipsisIcon,
+  ChatBubbleBottomCenterTextIcon
 } from 'react-native-heroicons/outline';
 
 const HomeTabScreen = () => {
@@ -66,7 +67,7 @@ const HomeTabScreen = () => {
                   size={42}
                 />
               ) : (
-                <ChatBubbleLeftEllipsisIcon
+                <ChatBubbleBottomCenterTextIcon
                   color="gray"
                   fill="white"
                   size={30}

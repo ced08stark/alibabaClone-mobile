@@ -41,7 +41,7 @@ const ArticleComponent = ({
 
   
   return (
-    <TouchableOpacity onPress={() => onPressed()} className="flex-row relative space-x-2 p-2 border-b border-gray-400">
+    <TouchableOpacity onPress={() => onPressed()} className="flex-row relative space-x-2 py-2 border-b border-gray-400">
       <View className="absolute top-0 left-1 z-10">
         <View className="relative items-center justify-center">
           <BookmarkIcon size={42} fill="orange" />
@@ -62,7 +62,7 @@ const ArticleComponent = ({
         )}
       </View>
       <View className="space-y-1 text-black">
-        <Text className="text-black w-[75%]">{description}</Text>
+        <Text className="text-black w-[95%] flex">{description}</Text>
         <Text className="font-bold text-black ">{price} XAF</Text>
         <Text className="text-black">{quantity} Pieces (MOQ)</Text>
         <View className="flex-row space-x-1 items-center">

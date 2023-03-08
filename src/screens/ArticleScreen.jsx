@@ -48,7 +48,7 @@ const ArticleScreen = () => {
         rating,
       },
     } = useRoute();
-    
+  
     const {setCurrentArticle} = useContext(ArticleContext);
      useEffect(() => {
        setCurrentArticle({
