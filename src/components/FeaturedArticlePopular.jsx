@@ -10,7 +10,7 @@ import ArticlePopular from './ArticlePopular';
 
 const FeaturedArticlePopular = () => {
   const [articlePopulars, setArticlePopular] = useState([]);
-  const [refreshing, setRefreshing] = useState(true);
+ 
     
    useEffect(() => {
     client
@@ -28,7 +28,7 @@ const FeaturedArticlePopular = () => {
        }[0]`,
       )
       .then(data => setArticlePopular(data?.articles));
-      setRefreshing(false);
+     
       
   }, [articlePopulars]);
   
@@ -42,7 +42,7 @@ const FeaturedArticlePopular = () => {
         horizontal
         contentContainerStyle={{paddingVertical: 5}}
         showsHorizontalScrollIndicator={false}
-        refreshControl={<RefreshControl refreshing={refreshing} />}>
+       >
         {articlePopulars?.map(article => (
           <ArticlePopular
             key={article?._id}

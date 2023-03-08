@@ -3,7 +3,7 @@ import React, {useContext, useEffect, useState, useCallback} from 'react'
 import ArticleComponent from '../components/ArticleComponent';
 import CargoImage from '../images/cargo.png';
 import { useRoute } from '@react-navigation/native';
-import { CategoyContext } from '../context/CategoryContext';
+import { ArticleContext } from '../context/ArticleContext';
 import client from '../../sanity';
 import article from '../../sanity/schemas/article';
 import category from '../../sanity/schemas/category';
@@ -11,7 +11,7 @@ import category from '../../sanity/schemas/category';
 var results = [];
 const MorePopular = () => {
   
-  const {currentCategory} = useContext(CategoyContext);
+  const {currentArticle} = useContext(ArticleContext);
   const [articles, setArticles] = useState([]);
    const [filters, setFilters] = useState([]);
    const [refreshing, setRefreshing] = useState(true);
@@ -43,9 +43,14 @@ const MorePopular = () => {
    getData();
    //console.log(articles.length);
    if (articles.length > 0) {
-      results = articles.filter(article => article.type?._id == currentCategory?._id);
+      results = articles.filter(
+        article =>
+          article.type?._id == currentArticle.category?._id &&
+          article?.name != currentArticle?.title,
+      );
+      
      //console.log(currentCategory[0]?._id);
-     //console.log(articles);
+     
    }
  }, [articles]);
 
@@ -59,7 +64,20 @@ const MorePopular = () => {
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }>
-      {results.map((article) => (
+      <ArticleComponent
+        key={currentArticle._id}
+        id={currentArticle?._id}
+        title={currentArticle?.title}
+        description={currentArticle?.description}
+        image={currentArticle?.image}
+        price={currentArticle?.price}
+        quantity={currentArticle?.quantity}
+        category={currentArticle?.category}
+        rating={currentArticle?.rating}
+        date={currentArticle?.date}
+        index={1}
+      />
+      {results?.map((article, index) => (
         <ArticleComponent
           key={article._id}
           id={article?._id}
@@ -68,9 +86,10 @@ const MorePopular = () => {
           image={article?.image}
           price={article?.price}
           quantity={article?.quantity}
-          categories={article?.categories}
+          category={article?.type}
           rating={article?.rating}
           date={article?.createdAt}
+          index={index+2}
         />
       ))}
     </ScrollView>

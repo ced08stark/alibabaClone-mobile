@@ -6,7 +6,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeTabScreen from './src/screens/HomeTabScreen';
 import SplashScreen from './src/screens/SplashScreen';
 import ArticleScreen from './src/screens/ArticleScreen';
-import { CategoyContext } from './src/context/CategoryContext';
+import OrderArticleScreen from './src/screens/OrderArticleScreen';
+import { ArticleContext } from './src/context/ArticleContext';
+
 
 
 
@@ -29,12 +31,12 @@ function App() {
   const isDarkMode = useColorScheme() === 'dark';
   
   const Stack = createNativeStackNavigator();
-  const [currentCategory, setCurrentCategory] = useState({});
+  const [currentArticle, setCurrentArticle] = useState({});
 
   
   return (
     <TailwindProvider>
-      <CategoyContext.Provider value={{currentCategory, setCurrentCategory}}>
+      <ArticleContext.Provider value={{currentArticle, setCurrentArticle}}>
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{headerShown: false}}
@@ -42,9 +44,10 @@ function App() {
             <Stack.Screen name="Splash" component={SplashScreen} />
             <Stack.Screen name="HomeTab" component={HomeTabScreen} />
             <Stack.Screen name="Article" component={ArticleScreen} />
+            <Stack.Screen name="OrderArticle" component={OrderArticleScreen} />
           </Stack.Navigator>
         </NavigationContainer>
-      </CategoyContext.Provider>
+      </ArticleContext.Provider>
     </TailwindProvider>
   );
 }

@@ -24,7 +24,7 @@ import VentePopular from './VentePopular';
 import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import {useContext} from 'react';
-import {CategoyContext} from '../context/CategoryContext';
+import {ArticleContext} from '../context/ArticleContext';
 
 const renderScene = SceneMap({
   popular: MorePopular,
@@ -48,10 +48,21 @@ const ArticleScreen = () => {
         rating,
       },
     } = useRoute();
-    const {setCurrentCategory} = useContext(CategoyContext);
+    
+    const {setCurrentArticle} = useContext(ArticleContext);
      useEffect(() => {
-       setCurrentCategory(category);
-     }, []);
+       setCurrentArticle({
+         id,
+         image,
+         title,
+         description,
+         price,
+         quantity,
+         category,
+         date,
+         rating,
+       });
+     }, [setCurrentArticle]);
     const layout = useWindowDimensions();
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
@@ -72,7 +83,7 @@ const ArticleScreen = () => {
         style={{backgroundColor: 'transparent', elevation: 0}}
         inactiveColor="gray"
         activeColor="black"
-        labelStyle={{textTransform: 'none', textAlign: 'left', fontSize: 12, fontWeight: 'bold'}}
+        labelStyle={{textTransform: 'none', textAlign: 'left', fontSize: 13, fontWeight: 'bold'}}
         
       />
     );

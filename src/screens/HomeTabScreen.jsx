@@ -18,6 +18,9 @@ import {
   InformationCircleIcon,
   SignalIcon,
   SignalSlashIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+  ChatBubbleBottomCenterIcon,
+  ChatBubbleLeftEllipsisIcon
 } from 'react-native-heroicons/outline';
 
 const HomeTabScreen = () => {
@@ -57,9 +60,17 @@ const HomeTabScreen = () => {
               );
             } else if (route.name === 'Message') {
               iconName = focused ? (
-                <SignalIcon color="#f97216" fill="white" size={42} />
+                <ChatBubbleOvalLeftEllipsisIcon
+                  color="#f97216"
+                  fill="white"
+                  size={42}
+                />
               ) : (
-                <SignalIcon color="gray" fill="white" size={30} />
+                <ChatBubbleLeftEllipsisIcon
+                  color="gray"
+                  fill="white"
+                  size={30}
+                />
               );
             }
 

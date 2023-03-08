@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Touchable, Image } from 'react-native'
 import React from 'react'
 import { urlFor } from '../../sanity';
 import { useNavigation } from '@react-navigation/native';
@@ -18,7 +18,8 @@ const ArticlePopular = ({
   const navigation = useNavigation();
   
   return (
-    <TouchableOpacity
+    <TouchableOpacity 
+
       onPress={() =>
         navigation.navigate('Article', {
           id,
@@ -39,7 +40,6 @@ const ArticlePopular = ({
           className="rounded-xl w-[120px] h-[120px]"
         />
       </View>
-
       <Text className="text-black font-bold text-center">{title}</Text>
       <Text className="text-gray-600 text-center w-32 text-xs">
         {description}
