@@ -30,13 +30,18 @@ const FeaturingTendance = () => {
           {articleLive?.map((article, index) => (
             <ArticleLive
               key={article._id}
-              image={article.image}
               isLive={false}
-              title="plein feu sur l'economie"
-              description="null"
+              id={article?._id}
+              title={article?.name}
+              description={article?.description}
+              image={article?.image}
+              price={article?.price}
+              quantity={article?.quantity}
+              category={article?.type}
+              rating={article?.rating}
+              date={article?.createdAt}
             />
           ))}
-
         </View>
       </View>
     </View>

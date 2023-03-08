@@ -13,23 +13,27 @@ const FeaturedArticlePopular = () => {
   const [refreshing, setRefreshing] = useState(true);
     
    useEffect(() => {
-    
     client
       .fetch(
         `*[_type == "tendance" && name == "popular(s)"]{
         ...,
         articles[] ->{
           ...,
+            type->{
+              ...,
+            }
+          
         }
+          
        }[0]`,
       )
       .then(data => setArticlePopular(data?.articles));
       setRefreshing(false);
-       
+      
   }, [articlePopulars]);
   
   
-  
+  //console.log();
 
   return (
     <View className="pt-4">
@@ -38,16 +42,19 @@ const FeaturedArticlePopular = () => {
         horizontal
         contentContainerStyle={{paddingVertical: 5}}
         showsHorizontalScrollIndicator={false}
-        refreshControl={
-          <RefreshControl refreshing={refreshing} />
-        }>
+        refreshControl={<RefreshControl refreshing={refreshing} />}>
         {articlePopulars?.map(article => (
           <ArticlePopular
-            key={article._id}
-            id={article._id}
-            title={article.name}
-            description={article.description}
+            key={article?._id}
+            id={article?._id}
+            title={article?.name}
+            description={article?.description}
             image={article?.image}
+            price={article?.price}
+            quantity={article?.quantity}
+            category={article?.type}
+            rating={article?.rating}
+            date={article?.createdAt}
           />
         ))}
       </ScrollView>

@@ -14,12 +14,7 @@ const FabricantRoute = () => {
       <View className="m-3">
         <SeachBar text="Fabricants de recherche" />
       </View>
-      <ScrollView className="flex-1 bg-gray-50">
-        <FeaturedRowCategories />
-        <FeaturedArticlePopular />
-        <FeaturedArticleNew />
-        <FeaturingTendance />
-      </ScrollView>
+      
     </SafeAreaView>
   );
 };

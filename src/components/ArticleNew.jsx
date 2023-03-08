@@ -3,7 +3,17 @@ import { urlFor } from '../../sanity';
 
 
 
-const ArticleNew = ({id, image, price, quantity}) => {
+const ArticleNew = ({
+  id,
+  image,
+  title,
+  description,
+  price,
+  quantity,
+  category,
+  date,
+  rating,
+}) => {
   return (
     <TouchableOpacity className="space-y-2 ">
       <View className="bg-gray-200/60 ml-3  items-center rounded-lg">
@@ -18,6 +28,6 @@ const ArticleNew = ({id, image, price, quantity}) => {
       </View>
     </TouchableOpacity>
   );
-}
+};
 
 export default ArticleNew

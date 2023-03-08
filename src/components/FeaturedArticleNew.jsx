@@ -37,19 +37,22 @@ const FeaturedArticleNew = () => {
         contentContainerStyle={{paddingVertical: 5}}
         showsHorizontalScrollIndicator={false}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
-        >
-        {articleNews?.map((article) => (
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
+        {articleNews?.map(article => (
           <ArticleNew
-            key={article._id}
-            id={article._id}
-            price={article.price}
-            quantity={article.quantity}
-            image={article.image}
+            key={article?._id}
+            id={article?._id}
+            title={article?.name}
+            description={article?.description}
+            image={article?.image}
+            price={article?.price}
+            quantity={article?.quantity}
+            category={article?.type}
+            rating={article?.rating}
+            date={article?.createdAt}
           />
         ))}
-
-        
       </ScrollView>
     </View>
   );

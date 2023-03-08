@@ -28,8 +28,7 @@ const HomeScreen = () => {
        style={{backgroundColor: 'white', elevation: 0}}
        inactiveColor="gray"
        activeColor="black"
-       
-       
+       labelStyle={{textTransform: 'capitalize'}}
      />
    );
 

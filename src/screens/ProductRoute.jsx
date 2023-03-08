@@ -9,8 +9,14 @@ import FeaturedArticleNew from '../components/FeaturedArticleNew';
 import FeaturingTendance from '../components/FeaturingTendance';
 import client from '../../sanity';
 
+
 const ProductRoute = () => {
-  const [refreshing, setRefreshing] = useState(false);
+  const [refreshing, setRefreshing] = useState(true);
+  useEffect(()=>{
+        setTimeout(() => {
+          setRefreshing(false);
+        }, 2000);
+  })
   const onRefresh = useCallback(() => {
     setRefreshing(true);
     setTimeout(() => {

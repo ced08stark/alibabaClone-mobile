@@ -2,7 +2,18 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {urlFor} from '../../sanity';
 import * as Animatable from 'react-native-animatable'
 
-const ArticleLive = ({image, title, description, isLive}) => {
+const ArticleLive = ({
+  id,
+  image,
+  title,
+  description,
+  price,
+  quantity,
+  category,
+  date,
+  rating,
+  isLive,
+}) => {
   return (
     <TouchableOpacity className="relative bg-gray-200/60 m-1 mr-3 rounded-lg">
       <View className="">
@@ -23,7 +34,6 @@ const ArticleLive = ({image, title, description, isLive}) => {
             source={require('../images/led.gif')}
             className="w-10 h-5"
           />
-          
         </View>
       )}
     </TouchableOpacity>

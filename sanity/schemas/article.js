@@ -45,11 +45,11 @@ export default {
       },
     },
     {
-      name: 'categories',
+      name: 'type',
       title: 'category of article',
       validation: (Rule) => Rule.required(),
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'category'}]}],
+      type: 'reference',
+      to: [{type: 'category'}],
     },
   ],
 }
